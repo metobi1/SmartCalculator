@@ -11,9 +11,13 @@ public class RunCalculatorApp {
 
         while (true) {
             String inputStr = getInput();
+
             if ("/exit".equals(inputStr)) {
                 System.out.println("Bye!");
                 break;
+            } else if (("/help").equals(inputStr)) {
+                displayAppValue();
+                continue;
             }
 
             Input input = new Input(inputStr);
@@ -24,6 +28,10 @@ public class RunCalculatorApp {
             int result = calculator.sum();
             displayResult(result);
         }
+    }
+
+    private static void displayAppValue() {
+        System.out.println("The program calculates the sum of numbers");
     }
 
     private static String getInput() {

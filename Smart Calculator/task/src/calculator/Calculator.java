@@ -2,21 +2,23 @@ package calculator;
 
 public class Calculator {
 
-    private int num1;
-    private int num2;
+    private int[] numbers;
+
+    /*private int num1;
+    private int num2;*/
 
     Calculator(int[] numbers) {
 
-        if (numbers.length == 2) {
-            this.num1 = numbers[0];
-            this.num2 = numbers[1];
-        } else {
-            this.num1 = numbers[0];
-        }
+        this.numbers = numbers;
     }
 
     public int sum() {
-        return num1 + num2;
-    }
 
+        int sum = 0;
+
+        for (int number : numbers) {
+            sum += number;
+        }
+        return sum;
+    }
 }
